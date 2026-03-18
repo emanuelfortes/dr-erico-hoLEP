@@ -1,4 +1,4 @@
-import drErico from "../assets/dr-erico.webp";
+import drErico from "../assets/dr-erico-escritorio.webp";
 
 const montserrat: React.CSSProperties = { fontFamily: "'Montserrat', sans-serif" };
 
