@@ -1,6 +1,6 @@
 import drErico from "../assets/dr-erico-escritorio.webp";
 
-const montserrat: React.CSSProperties = { fontFamily: "'Montserrat', sans-serif" };
+const montserrat: React.CSSProperties = { fontFamily: "'Montserrat Variable', sans-serif" };
 
 const NOS = [
   {

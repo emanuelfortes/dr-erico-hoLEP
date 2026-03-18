@@ -2,7 +2,7 @@ import { useState } from "react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { WA_LINK } from "../constants";
 
-const montserrat: React.CSSProperties = { fontFamily: "'Montserrat', sans-serif" };
+const montserrat: React.CSSProperties = { fontFamily: "'Montserrat Variable', sans-serif" };
 
 const FAQS = [
   {

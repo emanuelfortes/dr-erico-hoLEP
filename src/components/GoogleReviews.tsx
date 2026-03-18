@@ -25,7 +25,7 @@ function waitForGoogleMaps(timeout = 10000): Promise<void> {
   });
 }
 
-const montserrat = { fontFamily: "'Montserrat', sans-serif" };
+const montserrat: React.CSSProperties = { fontFamily: "'Montserrat Variable', sans-serif" };
 
 const gradients = [
   "linear-gradient(135deg,#667eea,#764ba2)",

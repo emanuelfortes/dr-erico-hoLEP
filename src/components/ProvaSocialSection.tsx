@@ -1,6 +1,6 @@
 import GoogleReviews from "./GoogleReviews";
 
-const montserrat: React.CSSProperties = { fontFamily: "'Montserrat', sans-serif" };
+const montserrat: React.CSSProperties = { fontFamily: "'Montserrat Variable', sans-serif" };
 
 const SELOS = [
   {

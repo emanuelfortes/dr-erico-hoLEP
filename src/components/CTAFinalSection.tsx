@@ -2,7 +2,7 @@ import WhatsAppIcon from "./WhatsAppIcon";
 import { WA_LINK } from "../constants";
 import imgLogo from "../assets/logo_1.png";
 
-const montserrat: React.CSSProperties = { fontFamily: "'Montserrat', sans-serif" };
+const montserrat: React.CSSProperties = { fontFamily: "'Montserrat Variable', sans-serif" };
 
 /* ══════════════════════════════════════
    CTA FINAL
