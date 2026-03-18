@@ -11,15 +11,15 @@ import { CTAFinalSection, Footer } from "../components/CTAFinalSection";
 const UrologistaFortaleza = () => (
   <div className="font-sans bg-[#0a1628] text-white overflow-x-hidden">
     <SeoHead
-      title="Urologista em Fortaleza | Dr. Érico Diógenes"
-      description="o que há de mais moderno em inovação e tecnologia para cuidar da sua saúde."
+      title="Urologista em Fortaleza | Dr. Érico Diógenes — HoLEP e Cirurgia Robótica"
+      description="Dr. Érico Diógenes, urologista referência em Fortaleza-CE. Especialista em HoLEP, o padrão-ouro para obstrução urinária. Agende sua avaliação via WhatsApp."
     />
     <TopBar />
     <HeroSection />
     <IdentificacaoSEO />
     <SolucaoSection />
-    <AutoridadeSection />
     <ProvaSocialSection />
+    <AutoridadeSection />
     <FAQSection />
     <CTAFinalSection />
     <Footer />

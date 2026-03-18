@@ -1,176 +1,261 @@
 import WhatsAppIcon from "./WhatsAppIcon";
 import { WA_LINK } from "../constants";
 
-const comoRealizado = [
-  "Visão 3D ampliada",
-  "Movimentos extremamente precisos",
-  "Controle total do cirurgião",
-];
-
 const beneficios = [
-  "Menos dor após a cirurgia",
-  "Cortes menores e mais delicados",
-  "Recuperação acelerada",
-  "Maior preservação de funções",
+  "Remove o tecido que obstrói com precisão milimétrica",
+  "Praticamente elimina o risco de recorrência",
+  "Preserva a função sexual e o controle urinário",
+  "Alta hospitalar em 24h a 48h",
+  "Retorno às atividades em poucos dias",
 ];
-
-const cardStyle = {
-  borderRadius: "1rem",
-  backgroundColor: "#0f1f3d",
-  border: "1px solid rgba(255,255,255,0.08)",
-  padding: "2rem",
-};
 
 const SolucaoSection = () => (
   <section
     id="solucao"
+    className="relative overflow-hidden"
     style={{
-      backgroundColor: "#0a1628",
-      padding: "6rem 1.5rem",
+      backgroundColor: "#071120",
       fontFamily: "'Montserrat', sans-serif",
     }}
   >
+    {/* ── Grade de fundo com listras brancas ── */}
     <div
-      className="grid grid-cols-1 lg:grid-cols-2"
-      style={{ maxWidth: "72rem", margin: "0 auto", gap: "3rem" }}
-    >
-      {/* RIGHT: copy — aparece primeiro no mobile */}
-      <div className="order-1 lg:order-2">
-        <div style={{ width: "3rem", height: "3px", backgroundColor: "#f5c518", marginBottom: "2rem" }} />
+      className="pointer-events-none absolute inset-0"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+        backgroundSize: "36px 36px",
+      }}
+    />
 
-        <h2
-          style={{
-            color: "#ffffff",
-            fontFamily: "'Montserrat', sans-serif",
-            fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-            fontWeight: 900,
-            lineHeight: 1.2,
-            marginBottom: "1.5rem",
-          }}
-        >
-          Cirurgia Robótica em Fortaleza: mais precisão,{" "}
-          <span style={{ color: "#f5c518" }}>menos impacto no seu corpo</span>
-        </h2>
+    {/* ── Glow dourado central ── */}
+    <div
+      className="pointer-events-none absolute inset-0"
+      style={{
+        background:
+          "radial-gradient(ellipse 60% 50% at 60% 50%, rgba(245,197,24,0.05) 0%, transparent 70%)",
+      }}
+    />
 
-        <p style={{ color: "#ffffff", fontSize: "0.875rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-          A cirurgia robótica representa o nível mais avançado da medicina urológica atual.
-          Com ela, o procedimento é realizado com:
-        </p>
+    {/* ── Linha dourada no topo ── */}
+    <div
+      className="absolute top-0 left-0 right-0 h-[3px]"
+      style={{
+        background:
+          "linear-gradient(to right, transparent, #f5c518 20%, #f5c518 80%, transparent)",
+      }}
+    />
 
-        <ul style={{ listStyle: "none", padding: 0, margin: "0 0 2rem 0", display: "flex", flexDirection: "column", gap: "0.625rem" }}>
-          {comoRealizado.map((item) => (
-            <li key={item} style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "#ffffff", fontSize: "0.875rem" }}>
-              <span
-                style={{
-                  width: "1.25rem",
-                  height: "1.25rem",
-                  borderRadius: "50%",
-                  backgroundColor: "rgba(245,197,24,0.15)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#f5c518",
-                  fontSize: "0.75rem",
-                  flexShrink: 0,
-                }}
-              >›</span>
-              {item}
-            </li>
-          ))}
-        </ul>
+    <div className="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-20 lg:py-28">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        <p style={{ color: "#ffffff", fontSize: "0.875rem", lineHeight: 1.7, marginBottom: "1.25rem" }}>
-          Isso proporciona:
-        </p>
+        {/* ══════════════════════════
+            ESQUERDA — cards de detalhe
+        ══════════════════════════ */}
+        <div className="order-2 lg:order-1 flex flex-col gap-4" data-aos="fade-right">
 
-        <ul
-          className="grid grid-cols-1 sm:grid-cols-2"
-          style={{ listStyle: "none", padding: 0, margin: "0 0 2rem 0", gap: "0.75rem" }}
-        >
-          {beneficios.map((b) => (
-            <li key={b} style={{ display: "flex", alignItems: "center", gap: "0.625rem", color: "#ffffff", fontWeight: 600, fontSize: "0.875rem" }}>
-              <span
-                style={{
-                  width: "1.25rem",
-                  height: "1.25rem",
-                  borderRadius: "50%",
-                  backgroundColor: "#f5c518",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#0a1628",
-                  fontSize: "0.7rem",
-                  fontWeight: 900,
-                  flexShrink: 0,
-                }}
-              >✓</span>
-              {b}
-            </li>
-          ))}
-        </ul>
+          {/* Card principal — destaque */}
+          <div
+            className="relative overflow-hidden rounded-2xl p-6"
+            style={{
+              background: "rgba(245,197,24,0.07)",
+              border: "0.5px solid rgba(245,197,24,0.25)",
+            }}
+            data-aos="fade-up" data-aos-delay="100"
+          >
+            {/* Ícone H */}
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
+              style={{ background: "#f5c518" }}
+            >
+              <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 900, fontSize: 18, color: "#071120" }}>H</span>
+            </div>
+            <h3
+              className="font-black text-white leading-snug mb-2"
+              style={{ fontSize: "clamp(1rem, 1.5vw, 1.2rem)" }}
+            >
+              Precisão milimétrica com laser de Hólmio
+            </h3>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              O HoLEP utiliza um laser de alta energia para enuclear o tecido prostático com precisão cirúrgica, sem cortes externos e com mínimo sangramento.
+            </p>
+          </div>
 
-        <p style={{ color: "#ffffff", fontSize: "0.875rem", lineHeight: 1.7, marginBottom: "2rem" }}>
-          Para pacientes que buscam excelência e tecnologia, essa é hoje a{" "}
-          <strong style={{ color: "#ffffff" }}>melhor escolha disponível.</strong>
-        </p>
+          {/* Card 2 */}
+          <div
+            className="rounded-2xl p-6"
+            style={{
+              background: "rgba(255,255,255,0.03)",
+              border: "0.5px solid rgba(255,255,255,0.08)",
+            }}
+            data-aos="fade-up" data-aos-delay="200"
+          >
+            <h3
+              className="font-bold text-white leading-snug mb-2"
+              style={{ fontSize: "clamp(0.9rem, 1.3vw, 1.05rem)" }}
+            >
+              Resultado definitivo — sem recorrência
+            </h3>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Diferente dos remédios, o HoLEP resolve o problema na origem. O tecido removido não volta a crescer, garantindo liberdade duradoura.
+            </p>
+          </div>
 
-        <a
-          href={WA_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.625rem",
-            backgroundColor: "#f5c518",
-            color: "#0a1628",
-            fontFamily: "'Montserrat', sans-serif",
-            fontWeight: 700,
-            fontSize: "0.75rem",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            padding: "1rem 2rem",
-            borderRadius: "9999px",
-            textDecoration: "none",
-            boxShadow: "0 8px 32px rgba(245,197,24,0.25)",
-          }}
-        >
-          <WhatsAppIcon size={16} />
-          Quero Saber Mais
-        </a>
-      </div>
+          {/* Card 3 */}
+          <div
+            className="rounded-2xl p-6"
+            style={{
+              background: "rgba(255,255,255,0.03)",
+              border: "0.5px solid rgba(255,255,255,0.08)",
+            }}
+            data-aos="fade-up" data-aos-delay="300"
+          >
+            <h3
+              className="font-bold text-white leading-snug mb-2"
+              style={{ fontSize: "clamp(0.9rem, 1.3vw, 1.05rem)" }}
+            >
+              Alta em 24h a 48h — retorno rápido à vida normal
+            </h3>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Procedimento minimamente invasivo, sem cortes externos. O paciente retorna às atividades em poucos dias com qualidade de vida restaurada.
+            </p>
+          </div>
 
-      {/* LEFT: cards — aparece segundo no mobile */}
-      <div className="order-2 lg:order-1" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <div style={cardStyle} data-aos="fade-right" data-aos-delay="500">
-          <h3 style={{ color: "#ffffff", fontWeight: 700, fontSize: "1.2rem", marginBottom: "0.5rem" }}>
-            Visão 3d ampliada + instrumentos articulados
-          </h3>
-          <p style={{ color: "#ffffff", fontSize: "0.875rem", lineHeight: 1.6, margin: 0 }}>
-            Visão 3D com ampliação de até 10x e instrumentos articulados com 7 graus de liberdade —
-            superando os limites da mão humana.
-          </p>
         </div>
 
-        <div style={cardStyle} data-aos="fade-right" data-aos-delay="700">
-          <h3 style={{ color: "#ffffff", fontWeight: 700, fontSize: "1.2rem", marginBottom: "0.5rem" }}>
-            Movimentos extremamente precisos
-          </h3>
-          <p style={{ color: "#ffffff", fontSize: "0.875rem", lineHeight: 1.6, margin: 0 }}>
-            Os instrumentos realizam movimentos altamente precisos e delicados, superando as limitações naturais das mãos humanas. Essa precisão permite intervenções mais controladas, reduzindo impactos nos tecidos e favorecendo uma recuperação mais rápida.
+        {/* ══════════════════════════
+            DIREITA — copy principal
+        ══════════════════════════ */}
+        <div className="order-1 lg:order-2" data-aos="fade-left" data-aos-delay="100">
+
+          {/* Eyebrow */}
+          <div
+            className="inline-flex items-center gap-2 text-[0.6rem] font-bold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full mb-6"
+            style={{
+              background: "rgba(245,197,24,0.08)",
+              border: "0.5px solid rgba(245,197,24,0.25)",
+              color: "rgba(245,197,24,0.75)",
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#f5c518" }} />
+            A solução definitiva
+          </div>
+
+          {/* H2 */}
+          <h2
+            className="font-black text-white leading-[1.08] mb-6"
+            style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)" }}
+          >
+            HoLEP em Fortaleza:{" "}
+            <span
+              style={{
+                display: "inline-block",
+                background: "#f5c518",
+                color: "#071120",
+                padding: "1px 10px",
+                borderRadius: 5,
+                lineHeight: 1.25,
+              }}
+            >
+              o padrão-ouro
+            </span>{" "}
+            mundial que poucos urologistas dominam
+          </h2>
+
+          {/* Texto */}
+          <p
+            className="leading-relaxed mb-8"
+            style={{ fontSize: "clamp(0.82rem, 1.1vw, 0.95rem)", color: "rgba(255,255,255,0.55)" }}
+          >
+            O HoLEP é hoje o tratamento mais avançado e eficaz para obstrução urinária causada pelo crescimento da próstata — e o{" "}
+            <strong className="text-white">Dr. Érico Diógenes</strong> é um dos poucos especialistas em Fortaleza a dominar essa técnica.
           </p>
+
+          {/* Lista de benefícios */}
+          <ul className="flex flex-col mb-8" style={{ gap: "10px" }}>
+            {beneficios.map((item, i) => (
+              <li
+                key={item}
+                className="flex items-start gap-3"
+                data-aos="fade-up"
+                data-aos-delay={i * 70}
+              >
+                <span
+                  className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center"
+                  style={{
+                    background: "#f5c518",
+                    minWidth: "1.25rem",
+                  }}
+                >
+                  <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                    <path d="M1 4L3.5 6.5L9 1" stroke="#071120" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+                <span
+                  className="font-semibold leading-snug"
+                  style={{ fontSize: "clamp(0.8rem, 1.05vw, 0.9rem)", color: "rgba(255,255,255,0.85)" }}
+                >
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Frase de impacto */}
+          <div
+            className="relative rounded-xl px-5 py-4 mb-8"
+            style={{
+              background: "rgba(245,197,24,0.06)",
+              border: "0.5px solid rgba(245,197,24,0.2)",
+            }}
+          >
+            {/* Linha de acento esquerda */}
+            <div
+              className="absolute left-0 top-4 bottom-4 w-[3px] rounded-full"
+              style={{
+                background:
+                  "linear-gradient(to bottom, transparent, #f5c518 20%, #f5c518 80%, transparent)",
+              }}
+            />
+            <p
+              className="font-black text-white leading-snug"
+              style={{ fontSize: "clamp(0.9rem, 1.3vw, 1.05rem)", paddingLeft: "1rem" }}
+            >
+              Você volta a dormir a noite toda.{" "}
+              <span style={{ color: "#f5c518" }}>Volta a viver sem limitações.</span>
+            </p>
+          </div>
+
+          {/* CTA */}
+          <a
+            href={WA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 font-bold text-[.7rem] tracking-[.1em] uppercase px-7 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+            style={{
+              background: "#f5c518",
+              color: "#071120",
+              boxShadow: "0 8px 32px rgba(245,197,24,0.25)",
+            }}
+          >
+            <WhatsAppIcon size={15} />
+            Quero saber se sou candidato ao HoLEP
+          </a>
+
         </div>
 
-        <div style={cardStyle} data-aos="fade-right" data-aos-delay="900">
-          <h3 style={{ color: "#ffffff", fontWeight: 700, fontSize: "1.2rem", marginBottom: "0.5rem" }}>
-            Controle total do cirurgião
-          </h3>
-          <p style={{ color: "#ffffff", fontSize: "0.875rem", lineHeight: 1.6, margin: 0 }}>
-            Todo o sistema é totalmente controlado pelo cirurgião em tempo real. Cada movimento é reproduzido com fidelidade pelos instrumentos cirúrgicos, garantindo segurança, estabilidade e máxima confiança durante todo o procedimento.
-          </p>
-        </div>
       </div>
     </div>
+
+    {/* ── Linha dourada no fundo ── */}
+    <div
+      className="absolute bottom-0 left-0 right-0 h-px"
+      style={{
+        background:
+          "linear-gradient(to right, transparent, rgba(245,197,24,0.15) 30%, rgba(245,197,24,0.15) 70%, transparent)",
+      }}
+    />
+
   </section>
 );
 

@@ -17,9 +17,9 @@ const TopBar = () => (
         lineHeight: 1.5,
       }}
     >
-      Urologista em Fortaleza: conheça a Cirurgia Robótica —{" "}
+      Urologista em Fortaleza especialista em HoLEP —{" "}
       <span style={{ color: "rgba(255,255,255,0.8)" }}>
-        o que há de mais moderno em inovação e tecnologia para cuidar da sua saúde.
+        Dr. Érico Diógenes
       </span>
     </h1>
   </div>
