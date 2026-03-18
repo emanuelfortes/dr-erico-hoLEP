@@ -5,4 +5,5 @@ const WhatsAppIcon = ({ size = 16 }: { size?: number }) => (
   </svg>
 );
 
+
 export default WhatsAppIcon;
