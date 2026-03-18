@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { WA_LINK } from "../constants";
 import imgLogo from "../assets/logo_1.png";
@@ -83,18 +83,16 @@ const STYLES = `
 }
 `;
 
-/* ─── Dados dos stats ─── */
 const STATS = [
-  { num: "21 +", label: "anos de\nexperiência" },
+  { num: "21+", label: "anos de\nexperiência" },
   { num: "5★",  label: "avaliação\nno Google"  },
   { num: "48h", label: "alta após\ncirurgia"    },
 ];
 
-/* ─── Pills do painel direito ─── */
 const PILLS = [
-  { text: "Padrão-ouro mundial",  cls: "pill-float-1", top: "28%",  right: "8%",  left: "auto", bottom: "auto", gold: true },
-  { text: "Sem cortes externos",  cls: "pill-float-2", top: "auto", right: "auto", left: "6%",  bottom: "28%",  gold: true },
-  { text: "Alta em 48h",          cls: "pill-float-3", top: "auto", right: "6%",  left: "auto", bottom: "14%",  gold: true },
+  { text: "Padrão-ouro mundial",  cls: "pill-float-1", top: "28%",  right: "8%",  left: "auto", bottom: "auto" },
+  { text: "Sem cortes externos",  cls: "pill-float-2", top: "auto", right: "auto", left: "6%",  bottom: "28%"  },
+  { text: "Alta em 48h",          cls: "pill-float-3", top: "auto", right: "6%",  left: "auto", bottom: "14%"  },
 ];
 
 const HeroSection = () => {
@@ -114,14 +112,11 @@ const HeroSection = () => {
       style={{ fontFamily: "'Montserrat', sans-serif", minHeight: "100svh" }}
     >
 
-      {/* ══════════════════════════════════════
-          MOBILE — foto em cima (só aparece em mobile)
-      ══════════════════════════════════════ */}
+      {/* MOBILE — foto em cima */}
       <div
         className="block lg:hidden w-full relative flex-shrink-0"
         style={{ height: "60vw" }}
       >
-        {/* Foto */}
         <div
           className="absolute inset-0"
           style={{
@@ -130,30 +125,20 @@ const HeroSection = () => {
             backgroundPosition: "center top",
           }}
         />
-        {/* Overlay inferior para fundir com o branco abaixo */}
         <div
           className="absolute inset-0"
-          style={{
-            background: "linear-gradient(to bottom, transparent 55%, #ffffff 100%)",
-          }}
+          style={{ background: "linear-gradient(to bottom, transparent 55%, #ffffff 100%)" }}
         />
-        {/* Overlay lateral esquerdo sutil */}
         <div
           className="absolute inset-0"
-          style={{
-            background: "linear-gradient(to right, rgba(255,255,255,.15) 0%, transparent 50%)",
-          }}
+          style={{ background: "linear-gradient(to right, rgba(255,255,255,.15) 0%, transparent 50%)" }}
         />
       </div>
 
-      {/* ══════════════════════════════════════
-          PAINEL ESQUERDO — branco
-          · Mobile: abaixo da foto
-          · Desktop: ocupa 55% da largura, altura 100vh
-      ══════════════════════════════════════ */}
+      {/* PAINEL ESQUERDO — branco */}
       <div
         className="relative flex flex-col justify-start lg:justify-center w-full lg:w-[55%]
-                   px-6 sm:px-10 lg:px-16 pt-6 pb-12 lg:py-20 bg-white lg:min-h-screen"
+                   px-6 sm:px-10 lg:px-16 pt-8 pb-12 lg:py-20 bg-white lg:min-h-screen"
         style={{ zIndex: 2 }}
       >
         {/* Linha de acento vertical — desktop only */}
@@ -164,9 +149,14 @@ const HeroSection = () => {
 
         <div className="hero-left-content flex flex-col gap-0">
 
-          {/* Logo */}
+          {/* ── LOGO — primeiro elemento, acima de tudo ── */}
           <div className="mb-8 lg:mb-10">
-            <img src={imgLogo} alt="Dr. Érico Diógenes — Urologista" className="h-10 sm:h-12 lg:h-14 w-auto" />
+            <img
+              src={imgLogo}
+              alt="Dr. Érico Diógenes — Urologista"
+              className="h-10 sm:h-12 lg:h-14 w-auto"
+              style={{ objectFit: "contain", maxWidth: 240, filter: "brightness(0)" }}
+            />
           </div>
 
           {/* Eyebrow + badge */}
@@ -279,14 +269,11 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* ══════════════════════════════════════
-          PAINEL DIREITO — escuro (desktop only)
-      ══════════════════════════════════════ */}
+      {/* PAINEL DIREITO — escuro (desktop only) */}
       <div
         className="hidden lg:block absolute right-0 top-0 w-[45%] h-full overflow-hidden"
         style={{ background: "#060f1d" }}
       >
-        {/* Foto de fundo */}
         <div
           className="absolute inset-0 hero-fade-in"
           style={{
@@ -296,17 +283,13 @@ const HeroSection = () => {
             opacity: .28,
           }}
         />
-
-        {/* Gradiente de fusão lateral */}
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(to right, #060f1d 0%, rgba(6,15,29,.4) 35%, transparent 100%)" }}
         />
-
-        {/* Scan line animada */}
         <div className="scan" />
 
-        {/* ── Diagrama SVG central ── */}
+        {/* SVG central */}
         <div
           className="absolute"
           style={{ top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 280, height: 280 }}
@@ -325,12 +308,10 @@ const HeroSection = () => {
             <circle cx="140" cy="140" r="30" fill="#f5c518" />
             <text x="140" y="147" textAnchor="middle" fontFamily="'Montserrat', sans-serif" fontWeight="900" fontSize="22" fill="#071120">H</text>
             <text x="140" y="198" textAnchor="middle" fontFamily="'Montserrat', sans-serif" fontWeight="700" fontSize="9" letterSpacing="5" fill="rgba(245,197,24,.65)">HOLEP</text>
-            {/* Topo: coração */}
             <g transform="translate(128,0)">
               <rect width="24" height="24" rx="6" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)" strokeWidth="0.5" />
               <path d="M12 18s-7-4.5-7-9a4 4 0 018 0 4 4 0 018 0c0 4.5-7 9-7 9z" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="1.2" strokeLinejoin="round" />
             </g>
-            {/* Direita: laser */}
             <g transform="translate(256,128)">
               <rect width="24" height="24" rx="6" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)" strokeWidth="0.5" />
               <circle cx="12" cy="12" r="4" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="1.2" />
@@ -339,13 +320,11 @@ const HeroSection = () => {
               <line x1="2"  y1="12" x2="6"  y2="12" stroke="rgba(255,255,255,.5)" strokeWidth="1.2" />
               <line x1="18" y1="12" x2="22" y2="12" stroke="rgba(255,255,255,.5)" strokeWidth="1.2" />
             </g>
-            {/* Baixo: paciente */}
             <g transform="translate(128,256)">
               <rect width="24" height="24" rx="6" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)" strokeWidth="0.5" />
               <circle cx="12" cy="8" r="3" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="1.2" />
               <path d="M6 22c0-4 2.5-6 6-6s6 2 6 6" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="1.2" strokeLinecap="round" />
             </g>
-            {/* Esquerda: escudo */}
             <g transform="translate(0,128)">
               <rect width="24" height="24" rx="6" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)" strokeWidth="0.5" />
               <path d="M12 3l7 3v5c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="1.2" strokeLinejoin="round" />
@@ -354,8 +333,8 @@ const HeroSection = () => {
           </svg>
         </div>
 
-        {/* Pills flutuantes */}
-        {PILLS.map(({ text, cls, top, right, left, bottom, gold }) => (
+        {/* Pills */}
+        {PILLS.map(({ text, cls, top, right, left, bottom }) => (
           <div
             key={text}
             className={`absolute font-semibold rounded-full px-4 py-2 ${cls}`}
@@ -368,13 +347,14 @@ const HeroSection = () => {
               letterSpacing: "0.07em",
               backdropFilter: "blur(6px)",
               whiteSpace: "nowrap",
+              fontFamily: "'Montserrat', sans-serif",
             }}
           >
             {text}
           </div>
         ))}
 
-        {/* Marca d'água de fundo */}
+        {/* Marca d'água */}
         <div
           className="absolute bottom-8 right-8 font-black select-none pointer-events-none"
           style={{
