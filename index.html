@@ -265,46 +265,12 @@
     </script>
 
     <!-- ═══════════════════════════════════════
-         FONTS & EXTERNAL
-         • preconnect antecipa a conexão TCP/TLS
-         • Google Fonts: media="print" + onload
-           garante carregamento não-bloqueante
-         • AOS CSS: mesma técnica (animações não
-           são críticas para o first render)
-         • <noscript> serve como fallback
+         EXTERNAL SCRIPTS
+         Fontes e AOS agora são locais (fontsource)
+         e importadas via index.css — sem requests externos.
     ═══════════════════════════════════════ -->
 
-    <!-- 1. Preconnect para domínios externos (economiza ~100-300ms por domínio) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://unpkg.com" />
-
-    <!-- 2. Google Fonts — carregamento assíncrono (não bloqueia LCP/FCP) -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-      />
-    </noscript>
-
-    <!-- 3. AOS CSS — carregamento assíncrono (animações não são críticas) -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-    </noscript>
-
-    <!-- 4. Google Maps — já estava correto (async + defer) -->
+    <!-- Google Maps — async + defer (não bloqueia renderização) -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCptfufZX-TtmhT8Mw-H7QKqmaZF2AziU4&libraries=places&loading=async"
       async
