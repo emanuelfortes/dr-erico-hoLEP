@@ -1,20 +1,12 @@
-/* ─── Montserrat: só latin + só woff2 (era 10 requests, agora 5) ─── */
-@import '@fontsource/montserrat/latin-400.css';
-@import '@fontsource/montserrat/latin-500.css';
-@import '@fontsource/montserrat/latin-600.css';
-@import '@fontsource/montserrat/latin-700.css';
-@import '@fontsource/montserrat/latin-800.css';
-@import '@fontsource/montserrat/latin-900.css';
-
-/* ─── Playfair Display: só latin + só woff2 ─── */
-@import '@fontsource/playfair-display/latin-400.css';
-@import '@fontsource/playfair-display/latin-700.css';
-@import '@fontsource/playfair-display/latin-900.css';
+/* ─── Variable fonts: 1 arquivo woff2 por família (era 10 requests, agora 2) ─── */
+/* npm install @fontsource-variable/montserrat @fontsource-variable/playfair-display */
+@import '@fontsource-variable/montserrat';
+@import '@fontsource-variable/playfair-display';
 
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Montserrat", sans-serif;
+  --font-sans: "Montserrat Variable", sans-serif;
 }
 
 @layer base {
@@ -23,14 +15,14 @@
   }
 
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat Variable', sans-serif;
     background-color: #0a1628;
     color: #ffffff;
     overflow-x: hidden;
   }
 
   .font-serif {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display Variable', serif;
   }
 }
 
